@@ -46,9 +46,12 @@ class Demoapi implements ResourcerInterface
      */
     public function getResource($resourceType)
     {
-        //TODO refactor, Caching
-        $rawResource = $this->loader->get(Config::get('demopack::paths.network'));
 
-        return ResourceFactory::build($rawResource, $resourceType);
+        $data = Cache::remember(Config::get('demopack::paths.local').$resourceType, $this->cache_duration, function()
+        {
+            return $this->loader->get(Config::get('demopack::paths.network'));
+        });
+
+        return ResourceFactory::build($data, $resourceType);
     }
 }

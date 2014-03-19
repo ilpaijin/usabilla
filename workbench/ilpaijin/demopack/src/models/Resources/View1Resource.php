@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Config;
 /**
 * View1Resource class.
 *
-* Maybe this class should implements DAO criteria, instead of current runtime initialization. 
+* Maybe this class should implements VO criteria, instead of current runtime initialization. 
 * Even better to use it with repository pattern.
 *
 * @package default

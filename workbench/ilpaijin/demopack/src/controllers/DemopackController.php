@@ -43,6 +43,6 @@ class DemopackController extends \Controller
             'data' => $resource->getData(),
             'average' => $resource->getAverageRating(),
             'itemsPerRating' => $resource->countItemsPerRating()
-            ));
+        ));
     }
 }
